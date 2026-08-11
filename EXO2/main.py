@@ -11,6 +11,20 @@ livre4 = Livre(15, "claud", "clocl", 2024, True)
 
 biblio = Bibliotheque("mabiblio")
 
-# biblio.ajouter_livre(livre3)
-# biblio.afficher_tous(livre3, livre2)
-Livre.emprunter(livre2)
+biblio.ajouter_livre(livre1)
+biblio.ajouter_livre(livre2)
+biblio.ajouter_livre(livre3)
+biblio.ajouter_livre(livre4)
+
+livre1.emprunter()
+livre1.emprunter()
+livre1.retourner()
+print(livre1.afficher())
+biblio.afficher_tous()
+print(f"Livres disponibles : {biblio.nombre_dispo()}")
+livres_auteur = biblio.chercher_par_auteur("Auteur1")
+
+for livre in livres_auteur:
+    print(livre.afficher())
+
+biblio.retirer_livre("Livre1")

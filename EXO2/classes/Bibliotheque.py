@@ -10,9 +10,20 @@ class Bibliotheque:
         """Cette méthode sert à ajouter un livre"""
         self.livres.append(livre)
 
+        # def retirer_livre(self, titre):
+        #     """Cette méthode sert à supprimer un livre"""
+        #     self.livres.remove(titre)
+
     def retirer_livre(self, titre):
-        """Cette méthode sert à supprimer un livre"""
-        self.livres.remove(titre)
+        for livre in self.livres:
+            if livre.titre.lower() == titre.lower():
+                print(livre.afficher())
+            choix = input(f"Voulez vous supprimer le livre (y/n) : ")
+            if choix.lower() == "y":
+                self.livres.remove(livre)
+                print("livre supprimé !")
+            else:
+                print("abandon")
 
     def afficher_tous(self):
         for livre in self.livres:

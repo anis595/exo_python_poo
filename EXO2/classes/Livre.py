@@ -16,5 +16,5 @@ class Livre:
         self.dispo == True
 
     def afficher(self):
-        statut = "Disponible" if self.disponible else "Emprunté"
+        statut = "Disponible" if self.dispo else "Emprunté"
         return f"{self.titre} de {self.auteur} ({self.annee}) - {statut}"
