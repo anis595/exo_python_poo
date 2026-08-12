@@ -11,10 +11,10 @@ class Flotte:
 
     def retirer_drone(self, numero_serie):
         for drone in self.drones:
-            numero_serie = int(input("Saisissez le numéro de série"))
-            if numero_serie == self.numero_serie:
+            if numero_serie == drone.numero_serie:
                 self.drones.remove(drone)
-            print("Le drone a été supprimé")
+                print("Le drone a été supprimé")
+                break
 
     def afficher_tous(self):
         for drone in self.drones:
@@ -23,9 +23,9 @@ class Flotte:
     def chercher_par_marque(self, marque):
         list_drones = []
         for drone in self.drones:
-            if drone.marque == marque:
+            if marque == drone.marque:
                 list_drones.append(drone)
-            return list_drones
+        return list_drones
 
     def nombre_au_sol(self):
         count = 0
